@@ -5,7 +5,7 @@ import { Authentication } from "../screens/Authentication";
 import "@testing-library/jest-native/extend-expect";
 
 jest.mock("expo-local-authentication", () => ({
-  authenticateAsync: jest.fn(),
+  authenticateAsync: jest.fn().mockResolvedValue({ success: true }),
   getEnrolledLevelAsync: jest.fn()
     .mockResolvedValueOnce(0)
     .mockResolvedValueOnce(2),
